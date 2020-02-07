@@ -1,7 +1,7 @@
 {
   "name": "csc515-project-lg",
   "version": "1.0.0",
-  "description": "This readme is a placeholder that should be replaced",
+  "description": "A web application to house and view a users photos.",
   "main": "main.js",
   "repository": {
     "type": "git",
