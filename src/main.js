@@ -31,9 +31,23 @@ if (main_page)
 }
 else if (categories_page)
 {
+    let albums = ['allphoto', 'recentphoto', 'fav', 'triptoa', 'self'];
 
+    albums.forEach(element => {
+        var album = document.getElementById(element); 
+        album.onclick = function(event) {
+            window.location.href = "album.html"; 
+        };
+    });
 }
 else if (album_page)
 {
-    
+    let photos = ['photo1', 'photo2', 'photo3'];
+
+    photos.forEach(element => {
+        var img = document.getElementById(element);
+        img.onclick = function(event) {
+            window.location.href = "image.html";
+        }
+    });
 }
