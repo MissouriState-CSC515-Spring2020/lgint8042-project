@@ -2,5 +2,6 @@
 
 ## Steps to run: 
 When trying to run the project use these two commands in the terminal: 
-1. `npm run build`
-2. `npm start`
+1. `npm install`
+2. `npm run build`
+3. `npm start`
