@@ -1,11 +1,8 @@
 import React from 'react';
 import {
-    Route,
     NavLink,
     HashRouter
   } from "react-router-dom";
-import Album from './Album';
-import Home from './Home';
 
 class Categories extends React.Component {
     render () {
