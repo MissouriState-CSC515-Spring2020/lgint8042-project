@@ -1,7 +1,5 @@
 # CSC 515 Project - Landan Ginther 
 
-## Steps to run: 
-When trying to run the project use these two commands in the terminal: 
-1. `npm install`
-2. `npm run build`
-3. `npm start`
+## All needed files are contained within the lgint8042-project sub-folder. Before trying to run anything ensure that you `cd lgint8042-project` to ensure you will be able to run and install. 
+See README within folder for further running instructions. 
+
