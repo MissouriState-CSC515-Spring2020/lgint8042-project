@@ -7,3 +7,8 @@ h1 {margin-right:10%; position: fixed; z-index:1; top:0.5em; right: 2em}
   .list {right:0em !important;}
   .is-ancestor{margin-top: 5em !important;}			
 }
+
+@media screen and (max-width: 412px)
+{
+  .list {margin-top: 1.5em;}
+}
