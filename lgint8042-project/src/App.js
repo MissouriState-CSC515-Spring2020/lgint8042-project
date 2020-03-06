@@ -9,7 +9,7 @@ import Categories from './Categories';
 function App() {
   return (
       <HashRouter>
-        <div className="content">
+        <div>
           <Route exact path="/" component={Home} />
           <Route path="/categories" component={Categories} />
           <Route path="/album" component={() => <Album title="Trip to Austria"/>} />
