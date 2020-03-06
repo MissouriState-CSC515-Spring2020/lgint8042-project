@@ -5,7 +5,7 @@ class Album extends React.Component {
     render () {
         return (
             <HashRouter>
-                <div>
+                <section class="section">
                     <level class="level level-right">
                         <h1 class="title is-1 has-text-weight-bold has-text-danger">{this.props.title}</h1>
                     </level>
@@ -39,7 +39,7 @@ class Album extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </HashRouter>
         );
     }  
