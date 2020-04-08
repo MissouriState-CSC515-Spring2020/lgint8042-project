@@ -7,47 +7,100 @@ import {
 
 class RecentPhotos extends React.Component {
     render () {
+        let videos = this.props.videos;
+        let thumbnails = videos.map((item) => item.snippet.thumbnails.high.url);
+        let videoIDs = videos.map((item) => item.id.videoId);
+        
         return (
             <HashRouter>
-                <section class="section">
-                    <div class="tile is-ancestor">
-                        <div class="tile is-vertical is-9">
-                            <div class="tile">
-                                <div class="tile is-parent is-vertical">
-                                <article class="tile is-child is-12">
-                                    <figure class="image">
-                                    <NavLink to="/image" id="photo-1">
-                                        <img src="/photos/IMG_2587-1.jpeg" sizes="(max-width: 480px) 95vw, 25vw"></img>
+                <section className="section">
+                    <div className="tile is-ancestor">
+                        <div className="tile is-vertical is-9">
+                            <div className="tile">
+                                <div className="tile is-parent is-vertical">
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[0]}>
+                                        <img src={thumbnails[0]} sizes="(max-width: 280px; max-height: 360px)"></img>
                                     </NavLink>
                                     </figure>
                                 </article>
-                                <article class="tile is-child is-12">
-                                    <figure class="image">
-                                    <NavLink to="/image" id="photo-2">
-                                        <img src="/photos/IMG_2358.jpeg" sizes="(max-width: 480px) 95vw, 25vw"></img>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[1]}>
+                                        <img src={thumbnails[1]} sizes="(max-width: 280px; max-height: 360px)"></img>
+                                    </NavLink>
+                                    </figure>
+                                </article>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[5]}>
+                                        <img src={thumbnails[5]} sizes="(max-width: 480px; max-height: 360px)"></img>
+                                    </NavLink>
+                                    </figure>
+                                </article>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[6]}>
+                                        <img src={thumbnails[6]} sizes="(max-width: 480px; max-height: 360px)"></img>
+                                    </NavLink>
+                                    </figure>
+                                </article>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[7]}>
+                                        <img src={thumbnails[7]} sizes="(max-width: 480px; max-height: 360px)"></img>
+                                    </NavLink>
+                                    </figure>
+                                </article>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[11]}>
+                                        <img src={thumbnails[11]} sizes="(max-width: 480px; max-height: 360px)"></img>
                                     </NavLink>
                                     </figure>
                                 </article>
                                 </div>
-                                <div class="tile is-parent is-vertical">
-                                <article class="tile is-child is-12">
-                                    <figure class="image">
-                                    <NavLink to="/image" id="photo-3">
-                                        <img src="/photos/IMG_1853.jpeg" sizes="(max-width: 480px) 95vw, 25vw"></img>
+                                <div className="tile is-parent is-vertical">
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[2]}>
+                                        <img src={thumbnails[2]} sizes="(max-width: 480px; max-height: 360px)"></img>
                                     </NavLink>
                                     </figure>
                                 </article>
-                                <article class="tile is-child is-12">
-                                    <figure class="image">
-                                    <NavLink to="/image" id="photo-4">
-                                        <img src="/photos/IMG_1948.jpeg" sizes="(max-width: 480px) 95vw, 25vw"></img>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[3]}>
+                                        <img src={thumbnails[3]} sizes="(max-width: 480px; max-height: 360px)"></img>
                                     </NavLink>
                                     </figure>
                                 </article>
-                                <article class="tile is-child is-12">
-                                    <figure class="image">
-                                    <NavLink to="/image" id="photo-5">
-                                        <img src="/photos/IMG_4817.jpeg"></img>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[4]}>
+                                        <img src={thumbnails[4]} sizes="(max-width: 480px; max-height: 360px)"></img>
+                                    </NavLink>
+                                    </figure>
+                                </article>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[8]}>
+                                        <img src={thumbnails[8]} sizes="(max-width: 480px; max-height: 360px)"></img>
+                                    </NavLink>
+                                    </figure>
+                                </article>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[9]}>
+                                        <img src={thumbnails[9]} sizes="(max-width: 480px; max-height: 360px)"></img>
+                                    </NavLink>
+                                    </figure>
+                                </article>
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                    <NavLink to={'/video/' + videoIDs[10]}>
+                                        <img src={thumbnails[10]} sizes="(max-width: 480px; max-height: 360px)"></img>
                                     </NavLink>
                                     </figure>
                                 </article>

@@ -11,9 +11,9 @@ function App() {
       <HashRouter>
         <div>
           <Route exact path="/" component={Home} />
-          <Route path="/categories" component={Categories} />
-          <Route path="/album" component={() => <Album title="Trip to Austria"/>} />
-          <Route path="/image" component={() => <Image number="4817" date="March 13, 2016" location="Salzburg Cathedral" dimensions="3264x2448" type="JPEG"/>} />
+          <Route path="/playlists" component={Categories} />
+          <Route path="/playlist/:playlistID/:title" component={Album} />
+          <Route path="/video/:videoID" component={Image} />
         </div>
       </HashRouter>
   );

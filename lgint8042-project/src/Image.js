@@ -2,16 +2,44 @@ import React from 'react';
 import './Image.css'
 
 class Image extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            video: []
+        };
+    }
+
+    componentWillMount() {
+        let videoID = this.props.match.params.videoID;
+        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet&key=' + process.env.REACT_APP_API_KEY + '&id=' + videoID)
+        .then(response => {
+            if (response.status >= 400) {
+                return Promise.reject(response);
+            }
+            console.log('Response status: ', response.status, response.statusText);
+            return response.json(); 
+        }).then(data => {
+            let video = data.items;
+            this.setState({video: video}); 
+        })
+    }
+
     render () {
+        let video = this.state.video;
+        let thumbnail = video.map((item) => item.snippet.thumbnails.maxres.url);
+        let title = video.map((item) => item.snippet.title);
+        let description = video.map((item) => item.snippet.description);
+        let tags = video.map((item) => item.snippet.tags.join(", "));
+
         return (
-            <section class="section">
-                <div class="tile is-ancestor">
-                    <div class="tile is-vertical is-9">
-                        <div class="tile">
-                            <div class="tile is-parent is-vertical">
-                                <article class="tile is-child is-12">
-                                    <figure class="image">
-                                        <img src="./photos/IMG_4817.jpeg"></img>
+            <section className="section">
+                <div className="tile is-ancestor">
+                    <div className="tile is-vertical is-9">
+                        <div className="tile">
+                            <div className="tile is-parent is-vertical">
+                                <article className="tile is-child is-12">
+                                    <figure className="image">
+                                        <img src={thumbnail}></img>
                                     </figure>
                                 </article>
                             </div>
@@ -19,33 +47,27 @@ class Image extends React.Component {
                     </div>
                 </div>
                 
-                <div class="list is-pulled-left is-shadowless image-list">
-                    <div class="level level-left">
-                        <p class="title is-1 has-text-weight-bold has-text-danger">Photo {this.props.number}</p>
+                <div className="list is-pulled-left is-shadowless image-list">
+                    <div className="level level-left">
+                        <p className="title is-1 has-text-weight-bold has-text-danger">{title}</p>
                     </div>
                     <div>
-                        <p class="is-size-4 has-text-danger has-text-weight-bold">Date</p>
-                        <p class="has-text-weight-semibold has-text-danger">{this.props.date}</p>
+                        <p className="is-size-4 has-text-danger has-text-weight-bold">Description</p>
+                        <p className="is-size-6 has-text-danger">{description}</p>
                     </div>
                     <div>
-                        <p class="is-size-4 has-text-danger has-text-weight-bold">Location</p>
-                    <p class="has-text-weight-semibold has-text-danger">{this.props.location}</p>
-                    </div>
-                    <div>
-                        <p class="is-size-4 has-text-danger has-text-weight-bold">Dimension</p>
-                        <p class="has-text-weight-semibold has-text-danger">{this.props.dimensions}</p>
-                    </div>
-                    <div>
-                        <p class="is-size-4 has-text-danger has-text-weight-bold">Image Type</p>
-                        <p class="has-text-weight-semibold has-text-danger">{this.props.type}</p>
+                        <p className="is-size-4 has-text-danger has-text-weight-bold">Tags</p>
+                        <p className="is-size-6 has-text-danger">{tags}</p>
                     </div>
                 </div>
             </section>
         );
     }  
+
     componentDidMount() {
-        document.title = 'Photo 4817';
+        document.title = "Video"; 
     }
 }
+
 
 export default Image; 

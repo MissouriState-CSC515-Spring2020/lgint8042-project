@@ -1,9 +1,9 @@
 var CACHE_NAME = 'lgint8042-project';
 var urlsToCache = [
     '/',
-    '/album',
-    '/categories',
-    'image'
+    '/playlist',
+    '/playlists',
+    '/video'
 ];
 
 self.addEventListener('install', event => {
