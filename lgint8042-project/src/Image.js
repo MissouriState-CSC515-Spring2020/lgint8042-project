@@ -4,7 +4,7 @@ import './Image.css'
 class Image extends React.Component {
     render () {
         return (
-            <div>
+            <section class="section">
                 <div class="tile is-ancestor">
                     <div class="tile is-vertical is-9">
                         <div class="tile">
@@ -40,7 +40,7 @@ class Image extends React.Component {
                         <p class="has-text-weight-semibold has-text-danger">{this.props.type}</p>
                     </div>
                 </div>
-            </div>
+            </section>
         );
     }  
     componentDidMount() {
