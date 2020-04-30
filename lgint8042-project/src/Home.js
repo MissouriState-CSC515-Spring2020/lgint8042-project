@@ -1,7 +1,8 @@
 import React from 'react';
-import Title from './Title';
-import Categories from './Categories';
-import RecentPhotos from './RecentPhotos';
+
+const Title = React.lazy(() => import('./Title'));
+const Categories = React.lazy(() => import('./Categories'));
+const RecentPhotos = React.lazy(() => import('./RecentPhotos'));
 
 class Home extends React.Component {
 
